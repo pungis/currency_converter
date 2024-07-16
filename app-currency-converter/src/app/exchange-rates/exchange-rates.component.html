@@ -1,0 +1,14 @@
+<div class="container">
+  <h2>Aktualne kursy walut</h2>
+  <div>
+    <label for="date">Wybierz datę:</label>
+    <input type="date" id="date" [(ngModel)]="selectedDate" (change)="onDateChange()" [min]="minDate" [max]="maxDate">
+  </div>
+  <ul>
+    <li *ngFor="let rate of exchangeRates">
+      <span>{{ rate.currency }} ({{ rate.code }}):</span>
+      <span>{{ rate.mid }}</span>
+    </li>
+  </ul>
+  
+</div>

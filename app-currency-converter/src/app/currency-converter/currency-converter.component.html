@@ -1,0 +1,53 @@
+<div class="container">
+  <!-- <h1>Przeliczanie walut</h1>
+  <form (ngSubmit)="convertCurrency()" aria-label="Formularz przeliczania walut">
+    <div>
+      <label for="amount">Kwota:</label>
+      <input type="number" id="amount" [(ngModel)]="amount" name="amount" required aria-required="true">
+    </div>
+    <div>
+      <label for="fromCurrency">Z:</label>
+      <select id="fromCurrency" [(ngModel)]="fromCurrency" name="fromCurrency" required aria-required="true">
+        <option *ngFor="let rate of exchangeRates" [value]="rate.code">{{ rate.currency }}</option>
+      </select>
+    </div>
+    <div>
+      <label for="toCurrency">Na:</label>
+      <select id="toCurrency" [(ngModel)]="toCurrency" name="toCurrency" required aria-required="true">
+        <option *ngFor="let rate of exchangeRates" [value]="rate.code">{{ rate.currency }}</option>
+      </select>
+    </div>
+    <button type="submit">Przelicz</button>
+  </form>
+  <div *ngIf="result">
+    <h2>średnia wartość po przeliczeniu: {{ result | number:'1.2-2' }}</h2>
+  </div> -->
+  <h2>Przeliczanie walut</h2>
+  <form (ngSubmit)="convertCurrency()">
+    <div class="currency-selection">
+      <div>
+        <label for="amount">Kwota:</label>
+        <input type="number" id="amount" [(ngModel)]="amount" name="amount">
+      </div>
+    </div>
+
+    <div class="currency-selection">
+      <div>
+        <label for="fromCurrency">Z waluty:</label>
+        <select id="fromCurrency" [(ngModel)]="fromCurrency" name="fromCurrency">
+          <option *ngFor="let rate of exchangeRates" [value]="rate.code">{{ rate.code }}</option>
+        </select>
+      </div>
+      <div>
+        <label for="toCurrency">Na walutę:</label>
+        <select id="toCurrency" [(ngModel)]="toCurrency" name="toCurrency">
+          <option *ngFor="let rate of exchangeRates" [value]="rate.code">{{ rate.code }}</option>
+        </select>
+      </div>
+    </div>
+    <button type="submit">Przelicz</button>
+  </form>
+  <div *ngIf="result" class="converted-amount">
+    <p>Przeliczona kwota: {{ result | number: '1.2-2' }}</p>
+  </div>
+</div>
