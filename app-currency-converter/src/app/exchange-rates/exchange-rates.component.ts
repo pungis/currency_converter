@@ -48,8 +48,4 @@ export class ExchangeRatesComponent implements OnInit {
     this.fetchExchangeRates(this.selectedDate);
   }
 
-  preventInvalidDateSelection(event: KeyboardEvent): void {
-    event.preventDefault();
-  }
-
 }
