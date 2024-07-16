@@ -2,7 +2,7 @@
   <h2>Aktualne kursy walut</h2>
   <div>
     <label for="date">Wybierz datę:</label>
-    <input type="date" id="date" [(ngModel)]="selectedDate" (change)="onDateChange()" [min]="minDate" [max]="maxDate">
+    <input type="date" id="date" [(ngModel)]="selectedDate" (change)="onDateChange()" [min]="minDate" [max]="maxDate" aria-label="Wybierz datę średniego kursu waluty">
   </div>
   <ul>
     <li *ngFor="let rate of exchangeRates">
